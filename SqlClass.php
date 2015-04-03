@@ -1,12 +1,13 @@
 <?php
-require_once('../settings.php');
+namespace ponbiki\thegame;
 
 class SqlClass
 {
-    protected $settings;
+    protected $dbSettings;
     
-    public function __construct($settings)
+    function __construct()
     {
+        $dbsettings = new settings();
         try {
             $pdo = new PDO(
                 sprintf(
